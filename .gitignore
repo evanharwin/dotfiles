@@ -1,8 +1,9 @@
 # default ignore everything
 *
 
-# include .gitignore
+# include .gitignore, readme
 !.gitignore
+!README.md
 
 # allow config folder, but ignore contents
 !.config/
