@@ -1,0 +1,16 @@
+# default ignore everything
+*
+
+# include .gitignore
+!.gitignore
+
+# allow config folder, but ignore contents
+!.config/
+.config/*
+
+# neovim config 
+!.config/nvim/
+.config/nvim/*
+!.config/nvim/init.lua
+!.config/nvim/lua/
+!.config/nvim/lua**
