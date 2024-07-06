@@ -18,7 +18,6 @@ plugin.settings = {
         -- suppressing a warning in lua config files
         settings = { Lua = { diagnostics = { globals = {"vim"} } } }
     },
-    rust_analyzer = {},
     ruff_lsp = {
         on_attach = function(client, bufnr)
             client.server_capabilities.hoverProvider = false
@@ -38,6 +37,9 @@ plugin.settings = {
         },
     },
 }
+
+-- set up a default, empty, config for the new mason tools.
+setmetatable(plugin.settings, { __index = function() return {} end })
 
 function plugin.config()
 	local lsp = require("lsp-zero")
