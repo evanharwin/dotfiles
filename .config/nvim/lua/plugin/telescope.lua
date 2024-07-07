@@ -6,8 +6,8 @@ local plugin = {
 }
 
 function plugin.config()
-    local actions = require "telescope.actions"
-    require("telescope").setup {
+    local actions = require("telescope.actions")
+    require("telescope").setup({
         defaults = {
             mappings = {
                 i = {
@@ -23,7 +23,7 @@ function plugin.config()
                 },
               },
         }
-    }
+    })
 end
 
 return plugin
