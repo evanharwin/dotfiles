@@ -23,7 +23,7 @@ vim.keymap.set('v', '<', '<gv', opts)
 vim.keymap.set('v', '>', '>gv', opts)
 
 -- telescope keybindings
-local telescope_builtin = require "telescope.builtin"
+local telescope_builtin = require("telescope.builtin")
 vim.keymap.set("n", "<leader>ff", telescope_builtin.find_files, opts)
 vim.keymap.set("n", "<leader>fr", telescope_builtin.git_files, opts)
 vim.keymap.set("n", "<leader>fg", telescope_builtin.live_grep, opts)
@@ -44,3 +44,8 @@ vim.keymap.set("n", "<leader>k", vim.lsp.buf.hover, opts)
 
 -- clear highlighted search result
 vim.keymap.set("n", "<leader>s", ":noh<CR>", opts)
+
+-- leap for motion with 'sS'
+vim.keymap.set({'n', 'x', 'o'}, 's', '<Plug>(leap-forward)')
+vim.keymap.set({'n', 'x', 'o'}, 'S', '<Plug>(leap-backward)')
+vim.keymap.set({'n', 'x', 'o'}, 'gs', '<Plug>(leap-from-window)')
