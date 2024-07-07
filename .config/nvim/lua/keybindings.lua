@@ -25,6 +25,7 @@ vim.keymap.set('v', '>', '>gv', opts)
 -- telescope keybindings
 local telescope_builtin = require "telescope.builtin"
 vim.keymap.set("n", "<leader>ff", telescope_builtin.find_files, opts)
+vim.keymap.set("n", "<leader>fr", telescope_builtin.git_files, opts)
 vim.keymap.set("n", "<leader>fg", telescope_builtin.live_grep, opts)
 vim.keymap.set("n", "<leader>fm", telescope_builtin.man_pages, opts)
 vim.keymap.set("n", "<leader>fb", telescope_builtin.buffers, opts)
