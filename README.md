@@ -2,7 +2,7 @@
 
 ## Setup on new machine
 
-First setup the repo:
+Setup the repo, to get the config:
 
 ```bash
 cd ~
@@ -11,7 +11,7 @@ git remote add https://github.com/evanharwin/dotfiles
 git fetch
 ```
 
-Then run the install steps below.
+But first run the install steps below!
 
 ## Install
 
