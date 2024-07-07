@@ -19,6 +19,7 @@ Then run the install steps below.
 
 ```bash
 sudo pacman --sync fish
+curl -sS https://starship.rs/install.sh | sh
 sudo pacman --sync neovim
 sudo pacman --sync ripgrep
 ```
@@ -32,6 +33,7 @@ curl -fsSL https://download.opensuse.org/repositories/shells:fish:release:3/Debi
 sudo apt update
 sudo apt install fish
 
+curl -sS https://starship.rs/install.sh | sh
 sudo apt-get install neovim
 sudo apt-get install ripgrep
 ```
