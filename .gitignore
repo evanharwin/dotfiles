@@ -9,6 +9,12 @@
 !.config/
 .config/*
 
+# shell config
+!.bashrc
+!.config/fish/
+.config/fish/*
+!.config/fish/config.fish
+
 # neovim config 
 !.config/nvim/
 .config/nvim/*
