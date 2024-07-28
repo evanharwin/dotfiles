@@ -49,3 +49,6 @@ vim.keymap.set("n", "<leader>s", ":noh<CR>", opts)
 vim.keymap.set({'n', 'x', 'o'}, 's', '<Plug>(leap-forward)')
 vim.keymap.set({'n', 'x', 'o'}, 'S', '<Plug>(leap-backward)')
 vim.keymap.set({'n', 'x', 'o'}, 'gs', '<Plug>(leap-from-window)')
+
+-- fix escape in terminal mode
+vim.api.nvim_set_keymap('t', '<ESC>', '<C-\\><C-n>', opts)
