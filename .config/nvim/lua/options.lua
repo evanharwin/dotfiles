@@ -8,7 +8,7 @@ vim.opt.clipboard = 'unnamedplus'
 vim.opt.updatetime = 50
 
 -- setup completions menu
-vim.opt.completeopt = {'menu', 'menuone', 'noselect'}
+vim.opt.completeopt = { 'menu', 'menuone', 'noselect' }
 
 -- space as leader key
 vim.g.mapleader = " "
@@ -37,3 +37,11 @@ vim.opt.splitright = true
 
 -- search
 vim.opt.incsearch = true
+
+
+-- format on save
+vim.api.nvim_create_autocmd('BufWritePre', {
+    callback = function()
+        vim.lsp.buf.format({ async = false })
+    end,
+})
