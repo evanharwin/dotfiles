@@ -1,4 +1,4 @@
-local opts= {
+local opts = {
     noremap = true,
     silent = true,
 }
@@ -46,9 +46,13 @@ vim.keymap.set("n", "<leader>k", vim.lsp.buf.hover, opts)
 vim.keymap.set("n", "<leader>s", ":noh<CR>", opts)
 
 -- leap for motion with 'sS'
-vim.keymap.set({'n', 'x', 'o'}, 's', '<Plug>(leap-forward)')
-vim.keymap.set({'n', 'x', 'o'}, 'S', '<Plug>(leap-backward)')
-vim.keymap.set({'n', 'x', 'o'}, 'gs', '<Plug>(leap-from-window)')
+vim.keymap.set({ 'n', 'x', 'o' }, 's', '<Plug>(leap-forward)')
+vim.keymap.set({ 'n', 'x', 'o' }, 'S', '<Plug>(leap-backward)')
+vim.keymap.set({ 'n', 'x', 'o' }, 'gs', '<Plug>(leap-from-window)')
 
 -- fix escape in terminal mode
 vim.api.nvim_set_keymap('t', '<ESC>', '<C-\\><C-n>', opts)
+
+-- barbar tabs
+vim.api.nvim_set_keymap('n', '<leader>w', ':BufferClose<CR>', opts)
+vim.api.nvim_set_keymap('n', '<leader>W', ':BufferCloseAllButVisible<CR>', opts)
