@@ -15,6 +15,14 @@ But first run the install steps below!
 
 ## Install
 
+### Packages
+
+- fish shell
+- starship prompt
+- neovim
+- ripgrep
+- uv
+
 ### Arch Linux
 
 ```bash
@@ -22,6 +30,7 @@ sudo pacman --sync fish
 curl -sS https://starship.rs/install.sh | sh
 sudo pacman --sync neovim
 sudo pacman --sync ripgrep
+curl -LsSf https://astral.sh/uv/install.sh | sh
 ```
 
 ### Debian
@@ -36,5 +45,6 @@ sudo apt install fish
 curl -sS https://starship.rs/install.sh | sh
 sudo apt-get install neovim
 sudo apt-get install ripgrep
+curl -LsSf https://astral.sh/uv/install.sh | sh
 ```
 
