@@ -1,5 +1,5 @@
 local plugin = {
-    "nvim-tree/nvim-web-devicons",
+    "samjwill/nvim-unception",
 }
 
 function plugin.config()

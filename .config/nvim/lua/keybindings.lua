@@ -53,6 +53,16 @@ vim.keymap.set({ 'n', 'x', 'o' }, 'gs', '<Plug>(leap-from-window)')
 -- fix escape in terminal mode
 vim.api.nvim_set_keymap('t', '<ESC>', '<C-\\><C-n>', opts)
 
--- barbar tabs
+-- manage buffers
 vim.api.nvim_set_keymap('n', '<leader>w', ':BufferClose<CR>', opts)
 vim.api.nvim_set_keymap('n', '<leader>W', ':BufferCloseAllButVisible<CR>', opts)
+
+-- oil file management.. from a file!
+local oil_actions = require("oil.actions")
+vim.api.nvim_set_keymap('n', '-', ':e %:h<CR>', opts)
+vim.api.nvim_set_keymap('n', '_', ':e .<CR>', opts)
+vim.api.nvim_set_keymap('n', '~', ':e ~/<CR>', opts)
+vim.api.nvim_set_keymap('n', '`', ':e ~/.config/nvim<CR>', opts)
+vim.keymap.set('n', '<CR>', oil_actions.select.callback, opts)
+vim.keymap.set('n', '<C-p>', oil_actions.preview.callback, opts)
+vim.keymap.set('n', '<leader>.', oil_actions.toggle_hidden.callback, opts)
