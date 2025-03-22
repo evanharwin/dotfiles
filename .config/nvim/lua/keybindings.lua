@@ -59,7 +59,16 @@ vim.api.nvim_set_keymap('n', '<leader>W', ':BufferCloseAllButVisible<CR>', opts)
 
 -- oil file management.. from a file!
 local oil_actions = require("oil.actions")
-vim.api.nvim_set_keymap('n', '-', ':e %:h<CR>', opts)
+vim.keymap.set('n', '-', function()
+    local buf_type = vim.api.nvim_buf_get_option(0, 'buftype')
+    if buf_type == '' then
+        -- If in a file buffer, open the parent directory
+        vim.cmd('e %:h')
+    else
+        -- If in a directory buffer, go up one level
+        vim.cmd('e %:h/..')
+    end
+end, opts)
 vim.api.nvim_set_keymap('n', '_', ':e .<CR>', opts)
 vim.api.nvim_set_keymap('n', '~', ':e ~/<CR>', opts)
 vim.api.nvim_set_keymap('n', '`', ':e ~/.config/nvim<CR>', opts)
