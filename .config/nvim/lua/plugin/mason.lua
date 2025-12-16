@@ -10,31 +10,13 @@ plugin.servers = {
     "lua_ls",
     "rust_analyzer",
     "ruff_lsp",
-    "pyright",
+    "ty",
 }
 
 plugin.settings = {
     lua_ls = {
         -- suppressing a warning in lua config files
         settings = { Lua = { diagnostics = { globals = { "vim" } } } }
-    },
-    ruff_lsp = {
-        on_attach = function(client, bufnr)
-            client.server_capabilities.hoverProvider = false
-        end
-    },
-    pyright = {
-        settings = {
-            pyright = {
-                disableOrganizeImports = true, -- use ruff
-            },
-            python = {
-                analysis = {
-                    ignore = { "*" }, -- use ruff
-                    typeCheckingMode = { "strict" },
-                }
-            }
-        },
     },
 }
 
